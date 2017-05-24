@@ -10,6 +10,7 @@ Base1 <- read.dbf('~/Dropbox/ENCIG/Bases/Encig2013_03_sec_6_8.DBF')
 
 #########################################################################################
 ## A - Personas con contacto directo con un servidor público
+## A - People that had direct contact with goverment staff
 #########################################################################################
 Base1P6_3A <- Base1$P6_3A
 
@@ -23,6 +24,7 @@ BaseP6_3A <- ifelse(BaseNum6_3A %in% c('1','2','3','4','5','6','7','8','9','10',
 
 #########################################################################################
 ## B - Personas que tuvieron alguna experiencia de corrupción
+## B - People that had an experience with corruption.
 #########################################################################################
 
 Base1P8_7 <- Base1$P8_7
@@ -32,6 +34,7 @@ BaseNum8_7[is.na(BaseNum8_7)] <- 0
 
 #########################################################################################
 ##Relación entre A y B
+## Relationship between A and B
 #########################################################################################
 tasa <- (sum(Base1$FAC_P18 * BaseNum8_7)/sum(Base1$FAC_P18 * BaseP6_3A))*100
 tasa
